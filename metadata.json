@@ -1,0 +1,6 @@
+{
+  "name": "KDT 클라우드 기반 백엔드 엔지니어링 15기 신청",
+  "description": "[15기] K-Digital Training: 클라우드 기반 백엔드 엔지니어링 과정 구글 폼 신청 랜딩 페이지",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

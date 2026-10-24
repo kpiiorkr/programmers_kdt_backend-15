@@ -1,0 +1,537 @@
+@import "tailwindcss";
+@import "./styled-components.css";
+@import "./school.css";
+@import "./landing-styles.css";
+
+/* Reset & Base Polish */
+html {
+  scroll-behavior: smooth;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure images do not overflow containers unexpectedly */
+img, picture, video, canvas, svg {
+  display: block;
+}
+
+/* =========================================================
+   1. GNB Header Polish
+========================================================= */
+#main-app-header {
+  position: relative;
+  z-index: 1000;
+  background: #ffffff;
+}
+
+.GlobalHeaderstyle__Header-sc-16dbplc-0 {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e8eb;
+  width: 100%;
+}
+
+.GlobalHeaderstyle__MainSection-sc-16dbplc-1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.GlobalHeaderstyle__MenuGroup-sc-16dbplc-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.LogoLinkstyle__LogoLink-sc-pnxc3t-0 {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.DesktopGnbMainMenuListstyle__Container-sc-8ebl73-0 {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: 36px;
+  flex: 1;
+}
+
+.DesktopGnbMainMenuListstyle__Container-sc-8ebl73-0 a {
+  text-decoration: none;
+  color: #202b3d;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.15s ease;
+}
+
+.DesktopGnbMainMenuListstyle__Container-sc-8ebl73-0 a:hover {
+  color: #0078ff;
+}
+
+.Badgestyle__TopBadge-sc-1nk09fm-1 {
+  display: inline-block;
+  background: #ff5638;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.GlobalHeaderstyle__UtilMenu-sc-16dbplc-4 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.UtilMenustyle__Container-sc-2sjysx-0 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.UtilMenustyle__Link-sc-2sjysx-5 {
+  color: #4b5966;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.UtilMenustyle__Link-sc-2sjysx-5:hover {
+  color: #202b3d;
+}
+
+.UtilMenustyle__BorderedLink-sc-2sjysx-6 {
+  background-color: #ff6e42 !important;
+  border: 1px solid #ff6e42 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 7px 18px !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.UtilMenustyle__BorderedLink-sc-2sjysx-6:hover {
+  background-color: #e55a30 !important;
+  border-color: #e55a30 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(255, 110, 66, 0.3) !important;
+}
+
+.MobileMenuButtonstyle__MobileMenuButton-sc-9nyyno-0 {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+@media (max-width: 991px) {
+  .DesktopGnbMainMenuListstyle__Container-sc-8ebl73-0,
+  .UtilMenustyle__Link-sc-2sjysx-5:not(.UtilMenustyle__BorderedLink-sc-2sjysx-6) {
+    display: none;
+  }
+  .MobileMenuButtonstyle__MobileMenuButton-sc-9nyyno-0 {
+    display: block;
+  }
+}
+
+/* Mobile Drawer Overlay */
+.GlobalHeaderstyle__MobileGnbContainer-sc-16dbplc-3 {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  z-index: 99999 !important;
+  transform: translateX(100%);
+  transition: transform 0.25s ease-out;
+}
+
+.GlobalHeaderstyle__MobileGnbContainer-sc-16dbplc-3.is-open {
+  transform: translateX(0) !important;
+  display: block !important;
+}
+
+.MobileGnbstyle__Container-sc-yi1ct8-0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background: #ffffff !important;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.MobileGnbstyle__TopBar-sc-yi1ct8-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid #e5e8eb;
+  background: #ffffff;
+}
+
+.MobileGnbstyle__CloseButton-sc-yi1ct8-2 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.MobileGnbstyle__Content-sc-yi1ct8-3 {
+  padding: 20px;
+  flex: 1;
+  background: #ffffff;
+}
+
+.MobileGnbstyle__MainMenuGroup-sc-yi1ct8-4 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.MobileGnbstyle__MainMenuGroupInner-sc-yi1ct8-5 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.MobileGnbstyle__MainMenuGroupInner-sc-yi1ct8-5 a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 4px;
+  color: #202b3d;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid #f2f4f7;
+  width: 100%;
+  background: transparent !important;
+}
+
+.MobileGnbstyle__MainMenuGroupInner-sc-yi1ct8-5 a:hover {
+  color: #0078ff;
+}
+
+/* =========================================================
+   2. Fullpage Topbar Polish
+========================================================= */
+.fullpage-topbar-wrapper {
+  background: #19191d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.fullpage-topbar.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.fullpage-topbar .main-area {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  min-width: 0;
+}
+
+.fullpage-topbar .course-title {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.3px;
+}
+
+.fullpage-topbar .course-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.fullpage-topbar .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.fullpage-topbar .btn-outline-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #e0e0e0;
+}
+
+.fullpage-topbar .btn-outline-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.fullpage-topbar .btn-light {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e0e0e0;
+}
+
+.fullpage-topbar .btn-light:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.fullpage-topbar .btn-primary {
+  background: #ff6e42;
+  border: 1px solid #ff6e42;
+  color: #ffffff;
+  padding: 8px 22px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.fullpage-topbar .btn-primary:hover {
+  background: #e55a30;
+  border-color: #e55a30;
+  box-shadow: 0 2px 10px rgba(255, 110, 66, 0.35);
+}
+
+@media (max-width: 860px) {
+  .fullpage-topbar.container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .fullpage-topbar .main-area {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .fullpage-topbar .course-title {
+    font-size: 15px;
+    width: 100%;
+  }
+  .fullpage-topbar .buttons-area {
+    width: 100%;
+  }
+  .fullpage-topbar .buttons-area .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   3. Sticky Banner Polish
+========================================================= */
+.KdtStickyBannerstyle__KdtStickyBannerStyle-sc-zyngsb-0 {
+  position: sticky;
+  top: 0;
+  z-index: 800;
+  background: #141416;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.KdtStickyBannerstyle__Content-sc-zyngsb-1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.KdtStickyBannerstyle__Title-sc-zyngsb-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #a0a0a0;
+  font-size: 14px;
+}
+
+.KdtStickyBannerstyle__Title-sc-zyngsb-2 strong {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+.fixed-width-digit {
+  display: inline-block;
+  min-width: 11px;
+  text-align: center;
+  color: #ff6e42;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+  font-weight: 800;
+}
+
+.KdtStickyBannerstyle__ButtonArea-sc-zyngsb-3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.KdtStickyBannerstyle__ButtonArea-sc-zyngsb-3 .fewdtR {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.KdtStickyBannerstyle__ButtonArea-sc-zyngsb-3 .fewdtR:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.KdtStickyBannerstyle__ButtonArea-sc-zyngsb-3 .hFnJXM {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff6e42;
+  border: 1px solid #ff6e42;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 7px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.KdtStickyBannerstyle__ButtonArea-sc-zyngsb-3 .hFnJXM:hover {
+  background: #e55a30;
+  border-color: #e55a30;
+  box-shadow: 0 2px 10px rgba(255, 110, 66, 0.4);
+}
+
+@media (max-width: 860px) {
+  .KdtStickyBannerstyle__Content-sc-zyngsb-1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+  }
+  .KdtStickyBannerstyle__ButtonArea-sc-zyngsb-3 {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   4. Sticky Navigation Bar (여백 없이 최상단 고정 설정)
+========================================================= */
+#landingPage .sticky-navigation-main {
+  position: sticky !important;
+  left: 0 !important;
+  top: 0 !important; /* 이전의 48px 여백을 0으로 수정하여 브라우저 최상단에 밀착 */
+  width: 100% !important;
+  z-index: 950 !important; /* 상단 배너보다 위 또는 안정적으로 최상단에 보이도록 설정 */
+  background: #242424 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 860px) {
+  #landingPage .sticky-navigation-main {
+    top: 0 !important; /* 모바일에서도 상단 여백 없이 0으로 고정 */
+  }
+}
+
+/* Tab Display Overrides */
+#landingPage .section-roadmap.part-2 .curriculum-wrap.active-1 .curriculum-box:nth-child(1),
+#landingPage .section-roadmap.part-2 .curriculum-wrap.active-2 .curriculum-box:nth-child(2),
+#landingPage .section-roadmap.part-2 .curriculum-wrap.active-3 .curriculum-box:nth-child(3),
+#landingPage .section-roadmap.part-2 .curriculum-wrap.active-4 .curriculum-box:nth-child(4),
+#landingPage .section-roadmap.part-2 .curriculum-wrap.active-5 .curriculum-box:nth-child(5) {
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+#landingPage .section-about-devcourse.part-4 .project-wrap.active-project-1 .dev-project:nth-child(1),
+#landingPage .section-about-devcourse.part-4 .project-wrap.active-project-2 .dev-project:nth-child(2),
+#landingPage .section-about-devcourse.part-4 .project-wrap.active-project-3 .dev-project:nth-child(3),
+#landingPage .section-about-devcourse.part-4 .project-wrap.active-project-4 .dev-project:nth-child(4) {
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+.toast-notice {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(24, 24, 28, 0.95);
+  border: 1px solid #ff6e42;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  z-index: 999999;
+  animation: fadeInOut 2.5s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, 12px); }
+  15% { opacity: 1; transform: translate(-50%, 0); }
+  85% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -10px); }
+}
