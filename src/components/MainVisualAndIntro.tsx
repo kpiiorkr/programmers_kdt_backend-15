@@ -137,7 +137,7 @@ export const MainVisualAndIntro: React.FC = () => {
                 />
                 <span>모집 기간</span>
               </dt>
-              <dd className="lp-schedule-value">26년 11월 11일(수)까지</dd>
+              <dd className="lp-schedule-value">26년 11월 18일(수)까지</dd>
             </div>
             <div className="lp-schedule-row">
               <dt className="lp-schedule-label">
@@ -151,7 +151,7 @@ export const MainVisualAndIntro: React.FC = () => {
                 />
                 <span>수강 기간</span>
               </dt>
-              <dd className="lp-schedule-value">26년 11월 13일(금) ~ 27년 4월 23일(금)</dd>
+              <dd className="lp-schedule-value">26년 11월 20일(금) ~ 27년 4월 30일(금)</dd>
             </div>
             <div className="lp-schedule-row">
               <dt className="lp-schedule-label">
