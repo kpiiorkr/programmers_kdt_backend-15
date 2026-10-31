@@ -17,7 +17,7 @@ test('calculateTimeRemaining returns positive countdown when target is in the fu
 
 test('calculateTimeRemaining returns expired when target is in the past', () => {
   const now = new Date('2026-11-20T12:00:00Z');
-  const target = new Date('2026-11-11T23:59:59Z');
+  const target = new Date('2026-11-18T23:59:59Z');
   const result = calculateTimeRemaining(now, target);
 
   assert.equal(result.isExpired, true);
