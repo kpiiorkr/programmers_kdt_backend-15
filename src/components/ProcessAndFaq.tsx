@@ -284,7 +284,7 @@ export const ProcessAndFaq: React.FC = () => {
                       alt="icon"
                     />
                   </div>
-                  <p>~ 11월 11일(수)까지</p>
+                  <p>~ 11월 18일(수)까지</p>
                 </div>
 
                 <div className="text-with-icon">
